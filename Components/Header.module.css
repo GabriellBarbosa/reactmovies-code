@@ -1,0 +1,98 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.875rem;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: 0.3s;
+  z-index: 999;
+}
+.header.active {
+  background: #131a22;
+}
+.header__title span {
+  color: #146eb4;
+}
+
+.header__list li {
+  display: inline-block;
+  padding: 0.875rem 0;
+}
+.header__list li + li {
+  margin-left: 0.875rem;
+}
+.menuMobile__wrapper {
+  background: transparent;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuMobile {
+  display: none;
+  background: #146eb4;
+  width: 50px;
+  height: 4px;
+  transition: all 0.3s;
+}
+.menuMobile::before,
+.menuMobile::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #146eb4;
+  position: absolute;
+  transition: all 0.3s;
+}
+.menuMobile::before {
+  margin-top: -10px;
+}
+.menuMobile::after {
+  margin-top: 10px;
+}
+.menuMobile__wrapper.ativo .menuMobile {
+  background: transparent;
+}
+.menuMobile__wrapper.ativo .menuMobile::before,
+.menuMobile__wrapper.ativo .menuMobile::after {
+  margin: 0;
+}
+.menuMobile__wrapper.ativo span::before {
+  transform: rotate(45deg);
+}
+.menuMobile__wrapper.ativo span::after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 602px) {
+  .header {
+    padding: 0 0.875rem;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .header__list {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 55px;
+    padding: 0.875rem;
+    background: #131a22;
+    text-align: center;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .header__list.header__listAtivo {
+    opacity: 1;
+  }
+  .menuMobile {
+    display: block;
+  }
+}

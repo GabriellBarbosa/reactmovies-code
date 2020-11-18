@@ -1,0 +1,86 @@
+.featuredMovie {
+  height: 100vh;
+}
+.backgroundGradientVertical {
+  height: inherit;
+  width: inherit;
+  background: linear-gradient(to top, #233d53 2%, transparent 98%);
+}
+.backgroundGradientHorizontal {
+  height: inherit;
+  width: inherit;
+  background: linear-gradient(to right, #233d53 20%, transparent 70%);
+  display: flex;
+  align-items: center;
+}
+.featuredMovie__content {
+  padding-left: 1.875rem;
+}
+.featuredMovie__title {
+  font-size: 2rem;
+}
+.featuredMovie__info {
+  display: flex;
+  gap: 0.875rem;
+  margin-bottom: 0.875rem;
+}
+.featuredMovie__overview {
+  width: 40%;
+  font-size: 1.125rem;
+  color: #d3d3d3;
+  max-height: 150px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+.featuredMovie__watch,
+.featuredMovie__addList {
+  margin-top: 1.25rem;
+  padding: 0.875rem 1.875rem;
+  font-family: var(--type__first);
+  font-size: 1rem;
+  background: #146eb4;
+  color: #f3f3f3;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.featuredMovie__watch:hover,
+.featuredMovie__addList:hover {
+  opacity: 0.8;
+}
+.featuredMovie__addList {
+  background: #f3f3f3;
+  color: #146eb4;
+  margin-left: 0.313rem;
+}
+.featuredMovie__genres {
+  margin-top: 0.875rem;
+  color: #d3d3d3;
+}
+@media screen and (max-width: 602px) {
+  .backgroundGradientVertical {
+    height: inherit;
+    width: inherit;
+    background: linear-gradient(to top, #233d53 2%, transparent 98%);
+  }
+  .featuredMovie__info {
+    display: none;
+  }
+  .featuredMovie__content {
+    padding-left: 0.875rem;
+  }
+  .featuredMovie__overview {
+    width: 72%;
+    font-size: 0.875rem;
+  }
+  .featuredMovie__watch,
+  .featuredMovie__addList {
+    font-size: 0.875rem;
+    padding: 0.875rem;
+  }
+  .featuredMovie__genres {
+    max-width: 320px;
+  }
+}

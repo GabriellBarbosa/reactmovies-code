@@ -1,0 +1,25 @@
+.loadingWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loading {
+  width: 80px;
+  height: 80px;
+  border: 20px solid #131a22;
+  border-radius: 50%;
+  border-right-color: #064b73;
+  animation: animate 1s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
